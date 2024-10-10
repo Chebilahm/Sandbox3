@@ -1,0 +1,7 @@
+
+<h1>{{ contact.name }}</h1>
+<p>Telefon: {{ contact.phone }}</p>
+<p>E-Mail: {{ contact.email }}</p>
+<a href="{% url 'contact_list' %}">Zurück zur Liste</a>
+<a href="{% url 'contact_edit' contact.id %}">Bearbeiten</a>
+<a href="{% url 'delete_contact' contact.id %}">Löschen</a>

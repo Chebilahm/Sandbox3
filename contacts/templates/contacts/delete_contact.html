@@ -1,0 +1,10 @@
+
+<h1>Kontakt löschen</h1>
+
+<p>Möchten Sie den Kontakt "{{ contact.name }}" wirklich löschen?</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <button type="submit">Ja, löschen</button>
+</form>
+<a href="{% url 'contact_list' %}">Abbrechen</a>

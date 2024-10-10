@@ -1,0 +1,28 @@
+
+<h1>Neuen Kontakt erstellen!</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><label for="name">Name:</label></td>
+            <td><input type="text" name="name" id="name" required></td>
+        </tr>
+        <tr>
+            <td><label for="phone">Telefon:</label></td>
+            <td><input type="text" name="phone" id="phone"></td>
+        </tr>
+        <tr>
+            <td><label for="email">E-Mail:</label></td>
+            <td><input type="email" name="email" id="email"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Speichern</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<a href="{% url 'contact_list' %}">Zurück zur Liste</a>
+

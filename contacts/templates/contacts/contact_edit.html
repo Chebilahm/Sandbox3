@@ -1,0 +1,17 @@
+
+<h1>Kontakt bearbeiten</h1>
+<form method="POST">
+    {% csrf_token %}
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="{{ contact.name }}" required>
+    <br>
+    <label for="email">E-Mail:</label>
+    <input type="email" name="email" id="email" value="{{ contact.email }}" required>
+    <br>
+    <label for="phone">Telefon:</label>
+    <input type="text" name="phone" id="phone" value="{{ contact.phone }}" required>
+    <br>
+    <button type="submit">Änderungen speichern</button>
+</form>
+<a href="{% url 'contact_detail' contact.id %}">Zurück zu den Details</a>
+<a href="{% url 'contact_list' %}">Zurück zur Liste</a>
