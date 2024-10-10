@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'contacts', # neue App hinzufügen
+    'contacts', # eine neue App hinzufügen
     ]
 
 MIDDLEWARE = [
