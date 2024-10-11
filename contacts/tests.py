@@ -12,7 +12,7 @@ class ContactTests(TestCase):
         # Testet, ob die Kontaktliste korrekt funktioniert
         response = self.client.get(reverse('contact_list'))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, self.contact.name)  # Überprüft, ob der Name des Kontakts auf der Seite erscheint
+        self.assertContains(response, self.contact.name)  # Überprüft ob der Name des Kontakts auf der Seite erscheint
         self.assertTemplateUsed(response, 'contacts/contact_list.html')
 
 
@@ -20,7 +20,7 @@ class ContactTests(TestCase):
     def test_contact_detail_view(self):        
         response = self.client.get(reverse('contact_detail', args=[self.contact.id]))
         self.assertEqual(response.status_code, 200)
-        self.assertContains(response, self.contact.name)  # Überprüft, ob der Kontaktname in der Detailansicht angezeigt wird
+        self.assertContains(response, self.contact.name)  # Überprüft ob der Kontaktname in der Detailansicht angezeigt wird
         self.assertTemplateUsed(response, 'contacts/contact_detail.html')
 
 
@@ -44,7 +44,7 @@ class ContactTests(TestCase):
         })
         self.assertEqual(response.status_code, 302)  # Überprüft, ob die Seite nach dem Bearbeiten weiterleitet
         self.contact.refresh_from_db()
-        self.assertEqual(self.contact.name, 'Max Mustermann Geändert')  # Überprüft, ob der Name geändert wurde
+        self.assertEqual(self.contact.name, 'Max Mustermann Geändert')  # Überprüft ob der Name geändert wurde
 
 
 # Testet, ob das Löschen eines Kontakts funktioniert
